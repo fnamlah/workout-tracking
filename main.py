@@ -5,6 +5,7 @@ APP_ID = os.environ.get("ID")
 API_KEY = os.environ.get("KEY")
 USERNAME = os.environ.get("NAME")
 PASSCODE = os.environ.get("CODE")
+LINK = os.environ.get("LINK")
 exercise_Endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
 exercise_input = input("Tell which exercise you did today?: ")
 header = {
@@ -27,7 +28,7 @@ print(result["exercises"][0]["nf_calories"])
 print(result["exercises"][0]["name"])
 
 
-sheety_endpoint = "https://api.sheety.co/c87a6ef3ba65533e4ded6ecd90f32336/workoutTracking/workouts"
+sheety_endpoint = f"https://api.sheety.co/{LINK}/workoutTracking/workouts"
 today_date = datetime.now().strftime("%d/%m/%Y")
 now_time = datetime.now().strftime("%X")
 for exercise in result["exercises"]:
